@@ -11,21 +11,15 @@ in
   pkgs.writeShellScriptBin
     "make-slides"
     ''
-      rm -rf build
-      mkdir -p build
-      cp --recursive ${revealjs} build/reveal.js
-      cp --recursive img build/
-      chmod --recursive +w build
-
       ${pkgs.pandoc}/bin/pandoc \
         --from markdown \
         --to revealjs \
-        --standalone \
-        --variable revealjs-url="reveal.js" \
+        --self-contained \
+        --variable revealjs-url="${revealjs}" \
         --variable theme="white" \
         --variable transition="none" \
         --variable controls="false" \
         --variable progress="true" \
-        --output=build/slides.html \
+        --output=slides.html \
         slides.md
     ''
