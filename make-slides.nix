@@ -1,11 +1,11 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ pkgs }:
 
 let
   revealjs = pkgs.fetchFromGitHub {
     owner = "hakimel";
     repo = "reveal.js";
-    rev = "4.1.0";
-    sha256 = "10xhblbyw8mvak58d294hbxxnf5sq0akj6qldv7brgm6944zppm0";
+    rev = "5.0.4";
+    sha256 = "sha256-sVnapzYPo3UzA345JLEIGtS4BnnFEEk4nqlIpraTNwc=";
   };
 in pkgs.writeShellScriptBin "make-slides" ''
   ${pkgs.pandoc}/bin/pandoc \
