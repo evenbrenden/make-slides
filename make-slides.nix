@@ -17,7 +17,7 @@ in pkgs.writeShellScriptBin "make-slides" ''
     --variable theme="white" \
     --variable transition="none" \
     --variable controls="false" \
-    --variable progress="true" \
+    --variable progress="false" \
     --output=slides.html \
     slides.md
 ''
