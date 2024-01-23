@@ -11,7 +11,8 @@ in pkgs.writeShellScriptBin "make-slides" ''
   ${pkgs.pandoc}/bin/pandoc \
     --from markdown \
     --to revealjs \
-    --self-contained \
+    --embed-resources \
+    --standalone \
     --variable revealjs-url="${revealjs}" \
     --variable theme="white" \
     --variable transition="none" \
