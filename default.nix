@@ -1,3 +1,3 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 
-pkgs.callPackage ./make-slides.nix {}
+pkgs.callPackage ./make-slides.nix { }
