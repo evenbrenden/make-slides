@@ -6,7 +6,7 @@
 
 # First slide
 
-- No _italic_ or **bold**
+- Go _italic_ or **bold**
 - And inline `code`
 
 ---
@@ -14,7 +14,7 @@
 # Second slide
 
 1. [Link](http://www.link.com) item
-2. Emojis ✅
+2. No emojis :/
 
 ---
 
@@ -40,7 +40,7 @@ data Maybe a = Yes a | No
 
 :::: column
 
-👋
+Columns!
 
 ::::
 
