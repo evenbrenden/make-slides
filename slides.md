@@ -14,7 +14,7 @@
 # Second slide
 
 1. [Link](http://www.link.com) item
-2. No emojis :/
+2. Emojis 👋
 
 ---
 
