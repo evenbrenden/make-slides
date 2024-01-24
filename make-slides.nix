@@ -3,21 +3,25 @@
 with pkgs;
 
 let
-  regular = "Symbola.otf"; # Referencing Nix store does not work
-  bold = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Bold.ttf";
-  italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Italic.ttf";
-  bold-italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-BoldItalic.ttf";
+  fonts = {
+    main-directory = "${pkgs.symbola}/share/fonts/opentype";
+    main-file = "Symbola.otf";
+    bold = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Bold.ttf";
+    italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Italic.ttf";
+    bold-italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-BoldItalic.ttf";
+  };
 in writeShellApplication {
   name = "make-slides";
   runtimeInputs = [ pandoc texlive.combined.scheme-medium ];
   text = ''
+    OSFONTDIR=${fonts.main-directory} \
     pandoc \
       --from markdown \
       --to beamer \
       --pdf-engine lualatex \
       --variable colorlinks \
-      --variable 'mainfont=${regular}' \
-      --variable 'mainfontoptions:BoldFont=${bold}, ItalicFont=${italic}, BoldItalicFont=${bold-italic}' \
+      --variable 'mainfont=${fonts.main-file}' \
+      --variable 'mainfontoptions:BoldFont=${fonts.bold}, ItalicFont=${fonts.italic}, BoldItalicFont=${fonts.bold-italic}' \
       --output slides.pdf \
       slides.md
   '';
