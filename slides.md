@@ -1,4 +1,4 @@
-% My slide
+% My slides
 % Me
 % 2024-01-24
 
@@ -13,7 +13,7 @@
 
 # Second slide
 
-1. [Linked](http://www.link.com) item
+1. [Link](http://www.link.com) item
 2. Emojis ✅
 
 ---
