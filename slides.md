@@ -6,8 +6,7 @@
 
 # First slide
 
-- Cool item
-- _With_ **things**
+- Item _with_ **things**
 - And inline `code`
 
 ---
@@ -15,8 +14,7 @@
 # Second slide
 
 1. [Linked](http://www.link.com) item
-2. Some emojis ✔️
-3. Not all though X
+2. Emojis ✅
 
 ---
 
@@ -42,14 +40,7 @@ data Maybe a = Yes a | No
 
 :::: column
 
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
+👋
 
 ::::
 

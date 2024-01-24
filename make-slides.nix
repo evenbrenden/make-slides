@@ -10,7 +10,7 @@ writeShellApplication {
       --from markdown \
       --to beamer \
       --pdf-engine lualatex \
-      --variable mainfont="DejaVu Sans" \
+      --variable mainfont="Symbola" \
       --variable colorlinks \
       --output slides.pdf \
       slides.md
