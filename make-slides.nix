@@ -6,9 +6,9 @@ let
   fonts = {
     main-directory = "${pkgs.symbola}/share/fonts/opentype";
     main-file = "Symbola.otf";
-    bold = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Bold.ttf";
-    italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-Italic.ttf";
-    bold-italic = "${liberation_ttf}/share/fonts/truetype/LiberationSans-BoldItalic.ttf";
+    bold = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-Bold.ttf";
+    italic = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-Italic.ttf";
+    bold-italic = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-BoldItalic.ttf";
   };
 in writeShellApplication {
   name = "make-slides";
