@@ -7,7 +7,7 @@
 # First slide
 
 - Go _italic_ or **bold**
-- And inline `code`
+- Inline your `code`
 
 ---
 
@@ -19,8 +19,6 @@
 ---
 
 # Third slide
-
-Code zeit.
 
 ```haskell
 data Maybe a = Yes a | No
