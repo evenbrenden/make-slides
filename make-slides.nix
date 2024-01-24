@@ -15,7 +15,7 @@ in writeShellApplication {
   runtimeInputs = [ pandoc texlive.combined.scheme-medium ];
   text = ''
     # https://tex.stackexchange.com/a/313605
-    SOURCE_DATE_EPOCH=1706125489 \
+    SOURCE_DATE_EPOCH=0 \
     OSFONTDIR=${fonts.main-directory} \
     pandoc \
       --from markdown \
