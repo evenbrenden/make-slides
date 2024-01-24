@@ -14,9 +14,9 @@
 
 # Second slide
 
-1. Ordered item
+1. [Linked](http://www.link.com) item
 2. Some emojis ✔️
-3. [Links](http://www.link.com) too!
+3. Not all though :/
 
 ---
 
@@ -42,14 +42,14 @@ data Maybe a = Yes a | No
 
 :::: column
 
-- Bye :D
-- Bye :D
-- Bye :D
-- Bye :D
-- Bye :D
-- Bye :D
-- Bye :D
-- Bye :D
+- Bye
+- Bye
+- Bye
+- Bye
+- Bye
+- Bye
+- Bye
+- Bye
 
 ::::
 
