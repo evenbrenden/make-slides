@@ -42,14 +42,14 @@ data Maybe a = Yes a | No
 
 :::: column
 
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
-- Bye
+- Bye :D
+- Bye :D
+- Bye :D
+- Bye :D
+- Bye :D
+- Bye :D
+- Bye :D
+- Bye :D
 
 ::::
 
