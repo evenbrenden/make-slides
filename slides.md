@@ -16,7 +16,7 @@
 
 1. [Linked](http://www.link.com) item
 2. Some emojis ✔️
-3. Not all though :/
+3. Not all though X
 
 ---
 
