@@ -11,6 +11,7 @@ writeShellApplication {
       --to beamer \
       --pdf-engine lualatex \
       --variable mainfont="DejaVu Sans" \
+      --variable colorlinks \
       --output slides.pdf \
       slides.md
   '';
