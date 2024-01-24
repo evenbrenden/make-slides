@@ -6,7 +6,7 @@
 
 # First slide
 
-- Item _with_ **things**
+- No _italic_ or **bold**
 - And inline `code`
 
 ---
