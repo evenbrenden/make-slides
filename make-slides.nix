@@ -3,12 +3,12 @@
 with pkgs;
 
 let
-  fonts = {
-    main-directory = "${pkgs.symbola}/share/fonts/opentype";
-    main-file = "Symbola.otf";
-    bold = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-Bold.ttf";
-    italic = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-Italic.ttf";
-    bold-italic = "${liberation_ttf}/share/fonts/truetype/LiberationSerif-BoldItalic.ttf";
+  fonts = rec {
+    main-directory = "${pkgs.freefont_ttf}/share/fonts/truetype";
+    main-file = "FreeSerif.ttf";
+    bold = "${main-directory}/FreeSerifBold.ttf";
+    italic = "${main-directory}/FreeSerifItalic.ttf";
+    bold-italic = "${main-directory}/FreeSerifBoldItalic.ttf";
   };
 in writeShellApplication {
   name = "make-slides";

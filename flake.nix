@@ -1,8 +1,6 @@
 {
   description = "make-slides";
 
-  # NIXPKGS_ALLOW_UNFREE=1 nix run --impure
-
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
   outputs = { self, nixpkgs }:
