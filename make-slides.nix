@@ -3,6 +3,7 @@
 with pkgs;
 
 let
+  # https://github.com/jgm/pandoc/pull/9204
   fonts = rec {
     main-directory = "${pkgs.freefont_ttf}/share/fonts/truetype";
     main-file = "FreeSerif.ttf";
