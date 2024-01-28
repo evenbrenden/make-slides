@@ -19,13 +19,13 @@ in writeShellApplication {
     SOURCE_DATE_EPOCH=0 \
     OSFONTDIR=${fonts.main-directory} \
     pandoc \
-      --from markdown \
-      --to beamer \
-      --pdf-engine lualatex \
-      --variable colorlinks \
-      --variable 'mainfont=${fonts.main-file}' \
-      --variable 'mainfontoptions:BoldFont=${fonts.bold}, ItalicFont=${fonts.italic}, BoldItalicFont=${fonts.bold-italic}' \
-      --output slides.pdf \
+      --from=markdown \
+      --to=beamer \
+      --pdf-engine=lualatex \
+      --variable='colorlinks:true' \
+      --variable='mainfont:${fonts.main-file}' \
+      --variable='mainfontoptions:BoldFont=${fonts.bold}, ItalicFont=${fonts.italic}, BoldItalicFont=${fonts.bold-italic}' \
+      --output=slides.pdf \
       slides.md
   '';
 }
