@@ -3,7 +3,6 @@
 with pkgs;
 
 let
-  # https://github.com/jgm/pandoc/pull/9204
   font-directory = "${pkgs.freefont_ttf}/share/fonts/truetype";
   metadata-file = writeText "metadata.yaml" ''
     ---
@@ -13,6 +12,8 @@ let
     - BoldFont=FreeSerifBold
     - ItalicFont=FreeSerifItalic
     - BoldItalicFont=FreeSerifBoldItalic
+    mainfontfallback:
+    - "NotoColorEmoji:mode=harf"
     ---
   '';
 in writeShellApplication {
