@@ -3,7 +3,11 @@
 with pkgs;
 
 let
-  font-directory = "${pkgs.freefont_ttf}/share/fonts/truetype";
+  fonts = symlinkJoin {
+    name = "make-slides-fonts";
+    paths = [ freefont_ttf noto-fonts-color-emoji ];
+  };
+  font-directory = "${fonts}//"; # https://github.com/NixOS/nixpkgs/issues/215857
   metadata-file = writeText "metadata.yaml" ''
     ---
     colorlinks: true
