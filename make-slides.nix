@@ -3,11 +3,9 @@
 with pkgs;
 
 let
-  fonts = symlinkJoin {
-    name = "make-slides-fonts";
-    paths = [ freefont_ttf noto-fonts-color-emoji ];
-  };
-  font-directory = "${fonts}//"; # https://github.com/NixOS/nixpkgs/issues/215857
+  # https://github.com/NixOS/nixpkgs/issues/215857
+  font-paths = builtins.concatStringsSep "//:" [ "${freefont_ttf}" "${noto-fonts-color-emoji}" ];
+  # https://github.com/jgm/pandoc/pull/9204
   metadata-file = writeText "metadata.yaml" ''
     ---
     colorlinks: true
@@ -26,7 +24,7 @@ in writeShellApplication {
   text = ''
     # https://tex.stackexchange.com/a/313605
     SOURCE_DATE_EPOCH=0 \
-    OSFONTDIR=${font-directory} \
+    OSFONTDIR=${font-paths} \
     pandoc \
       --from=markdown \
       --to=beamer \
