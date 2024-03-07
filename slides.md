@@ -32,7 +32,7 @@ data Maybe a = Yes a | No
 
 :::: column
 
-![](example.png){height=50%}
+![Caption](example.png)
 
 ::::
 
