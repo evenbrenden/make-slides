@@ -32,7 +32,7 @@ data Maybe a = Yes a | No
 
 :::: column
 
-![Caption](example.png){height=50%}
+Columns!
 
 ::::
 
@@ -43,3 +43,7 @@ Columns!
 ::::
 
 :::
+
+# Fifth slide
+
+![Caption](example.png){height=50%}
