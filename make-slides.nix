@@ -3,8 +3,9 @@
 with pkgs;
 
 let
+  # https://github.com/NixOS/nixpkgs/issues/215857
+  font-paths = builtins.concatStringsSep "//:" [ "${freefont_ttf}" "${noto-fonts-color-emoji}" ];
   # https://github.com/jgm/pandoc/pull/9204
-  font-directory = "${pkgs.freefont_ttf}/share/fonts/truetype";
   metadata-file = writeText "metadata.yaml" ''
     ---
     colorlinks: true
@@ -13,15 +14,18 @@ let
     - BoldFont=FreeSerifBold
     - ItalicFont=FreeSerifItalic
     - BoldItalicFont=FreeSerifBoldItalic
+    mainfontfallback:
+    - "NotoColorEmoji:mode=harf"
     ---
   '';
+  pandoc-3-1-12 = import ./pandoc-3-1.12.nix { inherit pkgs; };
 in writeShellApplication {
   name = "make-slides";
-  runtimeInputs = [ pandoc librsvg texlive.combined.scheme-medium ];
+  runtimeInputs = [ pandoc-3-1-12 librsvg texlive.combined.scheme-medium ];
   text = ''
     # https://tex.stackexchange.com/a/313605
     SOURCE_DATE_EPOCH=0 \
-    OSFONTDIR=${font-directory} \
+    OSFONTDIR=${font-paths} \
     pandoc \
       --from=markdown \
       --to=beamer \
