@@ -18,9 +18,10 @@ let
     - "NotoColorEmoji:mode=harf"
     ---
   '';
+  pandoc-3-1-12 = import ./pandoc-3-1.12.nix { inherit pkgs; };
 in writeShellApplication {
   name = "make-slides";
-  runtimeInputs = [ pandoc librsvg texlive.combined.scheme-medium ];
+  runtimeInputs = [ pandoc-3-1-12 librsvg texlive.combined.scheme-medium ];
   text = ''
     # https://tex.stackexchange.com/a/313605
     SOURCE_DATE_EPOCH=0 \
