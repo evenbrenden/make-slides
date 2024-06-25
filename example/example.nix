@@ -6,7 +6,7 @@ pkgs.stdenv.mkDerivation {
   buildInputs = [ make-slides ];
   buildPhase = ''
     mkdir -p $out/share/doc
-    make-slides
-    cp slides.pdf $out/share/doc
+    make-slides example.md
+    cp output.pdf $out/share/doc
   '';
 }

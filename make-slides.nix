@@ -27,6 +27,10 @@ in writeShellApplication {
   name = "make-slides";
   runtimeInputs = [ pandoc-3-1-12 librsvg (texlive.combine { inherit (texlive) scheme-full fvextra; }) ];
   text = ''
+    if [ "$#" -ne 1 ]; then
+      echo "Usage: make-slides <source file>"
+    fi
+
     # https://github.com/NixOS/nixpkgs/issues/180639#issuecomment-1178984307
     HOME=$(mktemp -d)
     export HOME
@@ -38,7 +42,7 @@ in writeShellApplication {
       --to=beamer \
       --pdf-engine=lualatex \
       --metadata-file=${metadata-file} \
-      --output=slides.pdf \
-      slides.md
+      --output=output.pdf \
+      "$1"
   '';
 }
