@@ -16,12 +16,16 @@ let
     - BoldItalicFont=FreeSerifBoldItalic
     mainfontfallback:
     - "NotoColorEmoji:mode=harf"
+    # https://github.com/jgm/pandoc/issues/4302#issuecomment-360799891
+    header-includes:
+    - \usepackage{fvextra}
+    - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     ---
   '';
   pandoc-3-1-12 = import ./pandoc-3-1.12.nix { inherit pkgs; };
 in writeShellApplication {
   name = "make-slides";
-  runtimeInputs = [ pandoc-3-1-12 librsvg texlive.combined.scheme-medium ];
+  runtimeInputs = [ pandoc-3-1-12 librsvg (texlive.combine { inherit (texlive) scheme-full fvextra; }) ];
   text = ''
     # https://github.com/NixOS/nixpkgs/issues/180639#issuecomment-1178984307
     HOME=$(mktemp -d)

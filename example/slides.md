@@ -21,7 +21,7 @@
 # Third slide
 
 ```haskell
-data Maybe a = Yes a | No
+data Maybe a = Surely a | Indeed a | Definitely a | Nay | Never | NotHappening
 ```
 
 ---
