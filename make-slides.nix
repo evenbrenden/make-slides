@@ -23,6 +23,9 @@ in writeShellApplication {
   name = "make-slides";
   runtimeInputs = [ pandoc-3-1-12 librsvg texlive.combined.scheme-medium ];
   text = ''
+    # https://github.com/NixOS/nixpkgs/issues/180639#issuecomment-1178984307
+    HOME=$(mktemp -d)
+    export HOME
     # https://tex.stackexchange.com/a/313605
     SOURCE_DATE_EPOCH=0 \
     OSFONTDIR=${font-paths} \
