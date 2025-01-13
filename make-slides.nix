@@ -22,10 +22,9 @@ let
     - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     ---
   '';
-  pandoc-3-1-12 = import ./pandoc-3-1.12.nix { inherit pkgs; };
 in writeShellApplication {
   name = "make-slides";
-  runtimeInputs = [ pandoc-3-1-12 librsvg (texlive.combine { inherit (texlive) scheme-full fvextra; }) ];
+  runtimeInputs = [ pandoc_3_5 librsvg (texlive.combine { inherit (texlive) scheme-full fvextra; }) ];
   text = ''
     if [ "$#" -ne 1 ]; then
       echo "Usage: make-slides <source file>"
