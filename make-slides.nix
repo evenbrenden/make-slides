@@ -4,7 +4,10 @@ with pkgs;
 
 let
   # https://github.com/NixOS/nixpkgs/issues/215857
-  font-paths = builtins.concatStringsSep "//:" [ "${freefont_ttf}" "${noto-fonts-color-emoji}" ];
+  font-paths = builtins.concatStringsSep "//:" [
+    "${freefont_ttf}"
+    "${noto-fonts-color-emoji}"
+  ];
   # https://github.com/jgm/pandoc/pull/9204
   metadata-file = writeText "metadata.yaml" ''
     ---
@@ -22,17 +25,24 @@ let
     - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
     ---
   '';
-in writeShellApplication {
+in
+writeShellApplication {
   name = "make-slides";
-  runtimeInputs = [ pandoc_3_5 librsvg (texlive.combine { inherit (texlive) scheme-full fvextra; }) ];
+  runtimeInputs = [
+    pandoc
+    librsvg
+    (texliveSmall.withPackages (
+      packages: with packages; [
+        scheme-full
+        fvextra
+      ]
+    ))
+  ];
   text = ''
     if [ "$#" -ne 1 ]; then
       echo "Usage: make-slides <source file>"
     fi
 
-    # https://github.com/NixOS/nixpkgs/issues/180639#issuecomment-1178984307
-    HOME=$(mktemp -d)
-    export HOME
     # https://tex.stackexchange.com/a/313605
     SOURCE_DATE_EPOCH=0 \
     OSFONTDIR=${font-paths} \
