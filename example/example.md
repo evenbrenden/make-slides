@@ -46,4 +46,12 @@ Columns!
 
 # Fifth slide
 
+> A quote.
+>
+> With two paragraphs.
+
+---
+
+# Sixth slide
+
 ![Caption](example.png){height=50%}

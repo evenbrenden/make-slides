@@ -23,6 +23,9 @@ let
     header-includes:
     - \usepackage{fvextra}
     - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    # Support multiple paragraphs in quotes.
+    - \usepackage{etoolbox}
+    - \apptocmd{\quote}{\setlength{\parskip}{1em}}{}{\errmessage{quote patch failed}}
     ---
   '';
 in
