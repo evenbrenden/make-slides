@@ -50,6 +50,14 @@ Columns!
 >
 > With two paragraphs.
 
+. . .
+
+And more.
+
+::: notes
+Presenter notes that won't be shown.
+:::
+
 ---
 
 # Sixth slide
