@@ -52,7 +52,8 @@ writeShellApplication {
     pandoc \
       --from=markdown \
       --to=beamer \
-      --pdf-engine=lualatex \
+      --pdf-engine=latexmk \
+      --pdf-engine-opt=-lualatex \
       --metadata-file=${metadata-file} \
       --output=output.pdf \
       "$1"
